@@ -6,8 +6,7 @@ $(document).ready(function(){
         }
     });
 
-
-    new DataTable('#tblKardex', {
+    new DataTable('#tblPendiente', {
         scrollX: true,
         language: {
             "decimal": "",
@@ -25,30 +24,25 @@ $(document).ready(function(){
         },
     });
 
-    $('.borrarKardex').click(function(e){
+    $('.borrarPendiente').click(function(e){
         e.preventDefault();
 
-        var idKardex = $(this).find(".idKardex").text();
-        var detalleKardex = $(this).find(".detalleKardex").text();
-        var fechaKardex = $(this).find(".fechaKardex").text();
-        var montoKardex = $(this).find(".montoKardex").text();
-        var tipoKardex = $(this).find(".tipoKardex").text();
-
-
+        var idPendiente = $(this).find(".idPendiente").text();
+        var nombrePendiente = $(this).find(".nombrePendiente").text();
         swal({
             title: "Confirmación de eliminación",
-            text: "Esta seguro de eliminar el "+tipoKardex+": "+detalleKardex+", con fecha : "+fechaKardex+", y valor : $"+montoKardex+" ?",
+            text: "Esta seguro de eliminar el pendiente : "+nombrePendiente+"?",
             icon: "warning",
             buttons: [
               'Cancelar',
-              'Eliminar Ingreso/Egreso'
+              'Eliminar Pendiente'
             ],
             dangerMode: true,
           }).then(function(isConfirm) {
             if (isConfirm) {
                 $('.loading').attr("hidden",false);
                 $.ajax({
-                    url: '/kardex/eliminar/'+idKardex,
+                    url: '/pendiente/eliminar/'+idPendiente,
                     type:'DELETE',
                     dataType: 'JSON',
                     //data: data,
@@ -56,19 +50,19 @@ $(document).ready(function(){
                         $('.loading').attr("hidden",true);
                         if(data.success){
                             swal({
-                                title: tipoKardex+" eliminado",
-                                text: "El "+tipoKardex+" con valor $"+montoKardex+" fue eliminado exitosamente!",
+                                title: "Pendiente eliminado",
+                                text: "El pendiente "+nombrePendiente+" fue eliminado exitosamente!",
                                 icon: "success",
                                 type: "success"
                             }).then(function(){
-                                window.location.href = "/kardex";
+                                window.location.href = "/pendiente";
                             }
                             );
                         }
                         if(data.error){
                             swal({
-                                title: "Error al eliminar el movimiento",
-                                text: "El movimiento ya pertenece a alguna actividad.",
+                                title: "Error al eliminar el pendiente",
+                                text: "El pendiente ya pertenece a alguna actividad.",
                                 icon: "error",
                                 type: "error"
                             }).then(function(){

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" type="text/css" media="all" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/bootstrap-table.min.css">
+    <link href="https://cdn.datatables.net/v/bs4/dt-2.1.2/datatables.min.css" rel="stylesheet">
     @yield('csss')
 
     <title>Lab Center</title>
@@ -25,8 +25,8 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="/img/logo.png" width="25px" height="25px" />
-                <span>Sistema Lab Center</span>
+                <!--<img src="/img/logo.png" width="25px" height="25px" />-->
+                <span><i class="bi bi-cash-coin"></i> LAB Center</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -39,9 +39,15 @@
                 <ul class="navbar-nav mr-auto">
                     @if (session('usuarioConectado'))
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('pendiente') }}"><i class="bi bi-clock-history"></i>
+                                Pendientes</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('movimiento') }}"><i class="bi bi-arrow-down-up"></i>
                                 Movimientos</a>
                         </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('kardex') }}"><i class="bi bi-activity"></i>
                                 Ingresos Egresos</a>
@@ -127,9 +133,7 @@
     <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/bootstrap-table.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/dt-2.1.2/datatables.min.js"></script>
     @yield('scripts')
 </body>
 

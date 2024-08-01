@@ -36,8 +36,18 @@
                                         <textarea class="form-control" id="detalleMovimiento" name="detalleMovimiento" rows="3" placeholder="Ingrese el detalle del movimiento" >{{ $movimiento->detalleMovimiento }}</textarea>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="estadoMovimiento" class="col-sm-2 col-form-label">Estado</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="estadoMovimiento">
+                                        <option value="">Seleccione el estado</option>
+                                        <option value="0" {{ "0" == $movimiento->estadoMovimiento ? 'selected' : '' }}>INACTIVO</option>
+                                        <option value="1" {{ "1" == $movimiento->estadoMovimiento ? 'selected' : '' }}>ACTIVO</option>
+                                    </select>
+                                </div>
+                            </div>
                             <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil-fill"></i> Editar
-                                lugar</button>
+                                movimiento</button>
                         </form>
                     </div>
                 </div>

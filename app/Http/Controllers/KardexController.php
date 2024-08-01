@@ -43,7 +43,7 @@ class KardexController extends Controller
     public function crearKardex(Request $request)
     {
         if (session()->has('usuarioConectado')) {
-            $movimientos = Movimiento::all();
+            $movimientos = Movimiento::where('estadoMovimiento', '1')->get();
             return view('kardex.crearKardex', compact('movimientos'));
         } else {
             return redirect()->route('menu');
@@ -59,8 +59,8 @@ class KardexController extends Controller
             'tipoKardex' => 'required',
             'idMovimiento' => 'required',
             'detalleKardex' => 'required',
-            'estadoKardex' => 'required',
             'observacionKardex' => 'required',
+            'estadoKardex' => 'required',
             'montoKardex' => 'required'
         ]);
 
@@ -113,7 +113,8 @@ class KardexController extends Controller
     public function editarKardex($idKardex)
     {
         $kardex = Kardex::where('idKardex',$idKardex)->first();
-        $movimientos= Movimiento::all();
+        #$movimientos= Movimiento::all();
+        $movimientos = Movimiento::where('estadoMovimiento', '1')->get();
 
         return view('kardex.editarKardex', compact('kardex','movimientos'));
     }

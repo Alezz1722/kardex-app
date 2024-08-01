@@ -5,22 +5,19 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span><i class="fas fa-clipboard-list"></i> Ingresos/Egresos para
-                            {{ session('usuarioConectado')['nombreUsuario'] }}
-                            {{ session('usuarioConectado')['apellidoUsuario'] }} </span>
+                        <span><i class="fas fa-clipboard-list"></i> Lista de I/E</span>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="" type="button" class="btn btn-success"><i class="bi bi-filetype-xls"></i> Importar</a>
+                            <!-- <a href="" type="button" class="btn btn-success"><i class="bi bi-filetype-xls"></i> Importar</a> -->
                             <a href="{{ route('crearKardex') }}" type="button" class="btn btn-warning"><i class="bi bi-folder-plus"></i> Registrar</a>
                         </div>
                     </div>
                     <div class="card-body">
                         <div style="display: none">{{ $cont = 0 }}</div>
                         @if (count($kardexs) > 0)
-                            <table class="table table-responsive table-bordered" id="tableKardex" data-filter-control="true"
-                            data-show-search-clear-button="true">
+                            <table class="table table-striped table-bordered" id="tblKardex">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -29,7 +26,7 @@
                                         <th scope="col" data-field="Tipo" data-filter-control="select">Tipo</th>
                                         <th scope="col" data-field="Estado" data-filter-control="select">Estado</th>
                                         <th scope="col" data-field="Movimiento" data-filter-control="select">Movimiento</th>
-                                        <th scope="col" data-field="Usuario_edicion" data-filter-control="select">Usuario Edición</th>
+                                        <th scope="col" data-field="Usuario_edicion" data-filter-control="select">Usuario</th>
                                         <th scope="col" data-field="Monto" data-filter-control="input">Monto</th>
                                         <!-- <th scope="col" data-field="Fecha_creacion" data-filter-control="input">Fecha creación</th>
                                         <th scope="col" data-field="Fecha_actualizacion" data-filter-control="input">Fecha actualización</th>-->

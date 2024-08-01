@@ -40,7 +40,8 @@ class MovimientoController extends Controller
 
         $validator = Validator::make($request->all(), [
             'nombreMovimiento' => 'required',
-            'detalleMovimiento' => 'required'
+            'detalleMovimiento' => 'required',
+            'estadoMovimiento' => 'required',
         ]);
 
         if ($validator->passes()) {
@@ -60,6 +61,7 @@ class MovimientoController extends Controller
             $movimiento = new Movimiento();
             $movimiento->nombreMovimiento = $request->nombreMovimiento;
             $movimiento->detalleMovimiento = $request->detalleMovimiento;
+            $movimiento->estadoMovimiento = $request->estadoMovimiento;
             $movimiento->idUsuario = session('usuarioConectado')['idUsuario'];
             $movimiento->save();
             return response()->json(['success'=>'Movimiento registrado exitosamente']);
@@ -97,6 +99,7 @@ class MovimientoController extends Controller
 
         $movimientoActualizado->nombreMovimiento = $request->nombreMovimiento;
         $movimientoActualizado->detalleMovimiento = $request->detalleMovimiento;
+        $movimientoActualizado->estadoMovimiento = $request->estadoMovimiento;
         $movimientoActualizado->idUsuario = session('usuarioConectado')['idUsuario'];
         $movimientoActualizado->save();
 

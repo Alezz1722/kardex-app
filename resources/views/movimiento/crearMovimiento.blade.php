@@ -30,6 +30,16 @@
                                     <textarea class="form-control" id="detalleMovimiento" name="detalleMovimiento" rows="3" placeholder="Ingrese el detalle del movimiento" value="{{ old('detalleMovimiento') }}"></textarea>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="estadoMovimiento" class="col-sm-2 col-form-label">Estado</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="estadoMovimiento">
+                                        <option value="">Seleccione el estado del movimiento</option>
+                                        <option value="0">INACTIVO</option>
+                                        <option value="1">ACTIVO</option>
+                                    </select>
+                                </div>
+                            </div>
                             <button class="btn btn-warning btn-block" type="submit" id="submitFormMovimiento"><i class="bi bi-plus"></i> Agregar movimiento</button>
                         </form>
                     </div>

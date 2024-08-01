@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MovimientoController;
 use App\Http\Controllers\KardexController;
+use App\Http\Controllers\PendienteController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -58,3 +59,19 @@ Route::get('/kardex/editar/{kardex}',[KardexController::class, 'editarKardex'])-
 Route::put('/kardex/editar/{kardex}',[KardexController::class, 'updateKardex'])->name('updateKardex');
 
 Route::delete('/kardex/eliminar/{kardex}',[KardexController::class, 'eliminarKardex'])->name('eliminarKardex');
+
+//Pendientes
+
+Route::get('/pendiente',[PendienteController::class, 'pendiente'])->name('pendiente');
+
+Route::get('/pendiente/crear',[PendienteController::class, 'crearPendiente'])->name('crearPendiente');
+
+Route::post('/pendiente/validar',[PendienteController::class, 'validaPendiente'])->name('validaPendiente');
+
+Route::post('/pendiente/crear',[PendienteController::class, 'agregarPendiente'])->name('agregarPendiente');
+
+Route::get('/pendiente/editar/{pendiente}',[PendienteController::class, 'editarPendiente'])->name('editarPendiente');
+
+Route::put('/pendiente/editar/{pendiente}',[PendienteController::class, 'updatePendiente'])->name('updatePendiente');
+
+Route::delete('/pendiente/eliminar/{kardex}',[PendienteController::class, 'eliminarPendiente'])->name('eliminarPendiente');

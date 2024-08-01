@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movimientos', function (Blueprint $table) {
-            $table->bigIncrements('idMovimiento');
-            $table->string('nombreMovimiento');
-            $table->string('detalleMovimiento');
-            $table->boolean("estadoMovimiento");
+        Schema::create('pendientes', function (Blueprint $table) {
+            $table->bigIncrements('idPendiente');
+            $table->string('nombrePendiente');
+            $table->string('detallePendiente');
+            $table->string('estadoPendiente');
             $table->unsignedBigInteger('idUsuario');
             $table->foreign('idUsuario')->references('idUsuario')->on('usuarios');
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Movimiento');
+        Schema::dropIfExists('Pendiente');
     }
 };
