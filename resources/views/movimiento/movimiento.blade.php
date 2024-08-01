@@ -68,5 +68,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('js/movimiento/lstmovimiento.js') }}"></script>
+    <script src="{{ asset('js/movimiento/lstMovimiento.js') }}"></script>
 @endsection

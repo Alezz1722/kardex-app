@@ -25,6 +25,8 @@ $(document).ready(function(){
         },
     });
 
+    
+
     $('.borrarKardex').click(function(e){
         e.preventDefault();
 
