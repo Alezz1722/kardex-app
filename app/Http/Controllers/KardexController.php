@@ -17,7 +17,7 @@ class KardexController extends Controller
     {
         if (session()->has('usuarioConectado')) {
             $idusuario = session('usuarioConectado')['idUsuario'];
-            $kardexs = Kardex::all();
+            $kardexs = Kardex::orderBy('fechaKardex', 'desc')->get();
             foreach ($kardexs as $kardex) {
                 $usuario = Usuario::where('idUsuario', $kardex->idUsuario)->first();
                 $kardex->idUsuario = $usuario;

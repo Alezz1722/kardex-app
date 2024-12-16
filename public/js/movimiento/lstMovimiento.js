@@ -5,7 +5,7 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+/** 
     new DataTable('#tblMovimiento', {
         scrollX: true,
         language: {
@@ -23,6 +23,7 @@ $(document).ready(function(){
             "zeroRecords": "Sin resultados encontrados"
         },
     });
+    */
 
     $('.borrarMovimiento').click(function(e){
         e.preventDefault();

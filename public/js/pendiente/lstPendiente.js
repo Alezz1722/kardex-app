@@ -6,6 +6,7 @@ $(document).ready(function(){
         }
     });
 
+    /**
     new DataTable('#tblPendiente', {
         scrollX: true,
         language: {
@@ -23,6 +24,8 @@ $(document).ready(function(){
             "zeroRecords": "Sin resultados encontrados"
         },
     });
+
+     */
 
     $('.borrarPendiente').click(function(e){
         e.preventDefault();

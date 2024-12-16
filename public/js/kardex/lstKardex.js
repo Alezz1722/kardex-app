@@ -6,7 +6,7 @@ $(document).ready(function(){
         }
     });
 
-
+/**
     new DataTable('#tblKardex', {
         scrollX: true,
         language: {
@@ -25,7 +25,7 @@ $(document).ready(function(){
         },
     });
 
-    
+    **/
 
     $('.borrarKardex').click(function(e){
         e.preventDefault();

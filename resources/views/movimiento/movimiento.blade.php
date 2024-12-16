@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div style="display: none">{{ $cont = 0 }}</div>
                         @if (count($movimientos) > 0)
-                            <table class="table table-striped table-bordered" id="tblMovimiento">
+                            <table class="table table-striped table-bordered table-responsive" id="tblMovimiento">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
