@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" type="text/css" media="all" />
-    <link href="https://cdn.datatables.net/v/bs4/dt-2.1.2/datatables.min.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" rel="stylesheet">
     @yield('csss')
 
     <title>Lab Center</title>
@@ -133,7 +133,7 @@
     <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-    <script src="https://cdn.datatables.net/v/bs4/dt-2.1.2/datatables.min.js"></script>
+    <script src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
     @yield('scripts')
 </body>
 

@@ -6,7 +6,7 @@ $(document).ready(function(){
         }
     });
 
-/**
+
     new DataTable('#tblKardex', {
         scrollX: true,
         language: {
@@ -25,11 +25,8 @@ $(document).ready(function(){
         },
     });
 
-    **/
-
-    $('.borrarKardex').click(function(e){
+    $('#tblKardex').on('click', '.borrarKardex', function(e) {
         e.preventDefault();
-
         var idKardex = $(this).find(".idKardex").text();
         var detalleKardex = $(this).find(".detalleKardex").text();
         var fechaKardex = $(this).find(".fechaKardex").text();
