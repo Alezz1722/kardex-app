@@ -87,7 +87,7 @@
         </div>
     </nav>
     <div class="loading" hidden>Loading&#8230;</div>
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding: 0;">
         @yield('contenidoPrincipal')
     </div>
     <!-- Modal cerrar sesion -->
