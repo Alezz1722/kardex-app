@@ -14,7 +14,7 @@
                             <a href="{{ route('crearKardex') }}" type="button" class="btn btn-warning"><i class="bi bi-folder-plus"></i> Registrar</a>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="padding: 0.5rem;">
                         <div style="display: none">{{ $cont = 0 }}</div>
                         @if (count($kardexs) > 0)
                             <table class="table table-striped table-bordered table-responsive" id="tblKardex">

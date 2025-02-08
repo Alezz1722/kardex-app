@@ -15,7 +15,7 @@
                             <ul class="listaErrores">
                             </ul>
                         </div>
-                        <form id="formKardex" method="POST">
+                        <form id="formKardex" method="POST" autocomplete="off">
                             @csrf
                             <div class="form-group row">
                                 <label for="fechaKardex" class="col-sm-3 col-form-label">Fecha</label>
